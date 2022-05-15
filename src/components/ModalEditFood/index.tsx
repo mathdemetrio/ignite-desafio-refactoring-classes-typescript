@@ -15,14 +15,14 @@ interface IFood {
   available: boolean;
 }
 
-interface ModalEditFood {
+interface ModalEditFoodProps {
   isOpen: boolean;
   editingFood: IFood;
   setIsOpen: () => void;
   handleUpdateFood: (food: IFood) => void;
 }
 
-export function ModalEditFood({isOpen, setIsOpen, editingFood, handleUpdateFood}: ModalEditFood) {
+export function ModalEditFood({isOpen, setIsOpen, editingFood, handleUpdateFood}: ModalEditFoodProps) {
   const formRef = useRef<FormHandles>(null)
 
   const handleSubmit = async (data: IFood) => {
